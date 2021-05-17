@@ -54,9 +54,9 @@ app.put("/repositories/:id", (request, response) => {
   }
 
   repository = repositories[repositoryIndex]
-  repository.title = title ?? repository.title
-  repository.url = url ?? repository.url
-  repository.techs = techs ?? repository.techs
+  if (title)  repository.title = title 
+  if (url) repository.url = url
+  if (techs) repository.techs = techs 
 
   repositories[repositoryIndex] = repository;
 
